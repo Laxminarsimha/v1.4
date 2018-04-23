@@ -1,0 +1,74 @@
+﻿@using PhixDataFlow.Models
+<div class="panel-heading center">Tickets Report</div>
+<table class="table table-bordered table-striped" id="ticket-report-table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Escalation ID</th>
+            <th>Summary</th>
+            <th>Priority</th>
+            <th>Escalation Status</th>
+            <th>Possible Datafixes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            List<TicketData> FilteredData = ViewBag.FilteredData;
+            int qcsno = 1;
+        }
+        @foreach (TicketData ticket in FilteredData)
+        {
+            <tr>
+                <td>@(qcsno++)</td>
+                <td>@ticket.EscalationId</td>
+                <td>@ticket.Summary</td>
+                <td>@ticket.Priority</td>
+                <td>@ticket.EscalationStatus</td>
+                <td><button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#demo" onclick="getPossibleSearches()">View Datafixes</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="defect-data1" tabindex="-1" role="dialog" aria-labelledby="defect-data">
+    <div class="modal-dialog modal-custom-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="defect-dataLabel"></h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+    function getPossibleSearches() {
+        var table = $('#ticket-report-table').DataTable();
+        $('#ticket-report-table tbody').on('click', 'tr', function () {
+            var data = table.row(this).data();
+            var search = data[2];
+            if (search.length > 2) {
+                $.ajax({
+                    url: "@Url.Action("GetSearchedData", "Home")",
+                    data: { "search": search },
+                    success: function (result) {
+                        $("#defect-data1 .modal-title").text("Possible Fixes1");
+                        $("#defect-data1 .modal-body").html(result);
+                        $("#defect-data1").modal("show");
+                        $("#ticket-report-table-detailed").DataTable();
+                        //$("#ticket-report-table-detailed").css("display", "block");
+                        //$("#ticket-report-table-detailed").html(result);
+                    }
+                });
+            }
+        });
+    };
+</script>

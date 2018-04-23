@@ -1,0 +1,336 @@
+﻿@{
+    ViewBag.Title = "Dashborad";
+}
+@section styles{
+    <link href="~/Content/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <style>
+        .modal-custom-lg{
+            width:80% !important;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header" data-background-color="orange">
+                <i class="material-icons">content_copy</i>
+            </div>
+            <div class="card-content">
+                <p class="category">Today's Escalations</p>
+                <h3 class="title">
+                    @ViewBag.Last24HrsCount
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons text-danger">warning</i>
+                    <a href="#pablo">Get More details...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header" data-background-color="green">
+                <i class="material-icons">store</i>
+            </div>
+            <div class="card-content">
+                <p class="category">Today Resolved Defects</p>
+                <h3 class="title">                    
+                    @ViewBag.TodayClosedDefects
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">date_range</i> Last 24 Hours
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header" data-background-color="red">
+                <i class="material-icons">info_outline</i>
+            </div>
+            <div class="card-content">
+                <p class="category">Overall New Defects count</p>
+                <h3 class="title">
+                    @ViewBag.OverallNewDefects                    
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">local_offer</i> Tracked from Salesforce
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header" data-background-color="blue">
+                <i class="fa fa-ticket"></i>
+            </div>
+            <div class="card-content">
+                <p class="category">High Priority Defetcs</p>
+                <h3 class="title">
+                    @ViewBag.HighPriorityDefects                    
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">update</i> Just Updated
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header" data-background-color="green">
+                <h4 class="title text-center">Last 24 Hours Defects </h4>
+            </div>
+            <div class="card-content">
+                <div class="ct-chart" id="priorityDefects"></div>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">access_time</i> Total Defects
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header" data-background-color="blue">
+                <h4 class="title text-center">My PME Tickets </h4>
+            </div>
+            <div class="card-content">
+                <div class="ct-chart" id="statusDefects"></div>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">access_time</i> Total Defects
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script src="~/Content/datatables/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            vob_data = [{
+                name: 'P2 - High',
+                y: 61,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'P3 - Medium',
+                y: 84
+            }, {
+                name: 'P4 - Enhancement',
+                y: 10
+                }];
+            $.ajax({
+                url: "@Url.Action("GetHighPriorityDefects")",
+                DataType: "Json",
+                success: function (result) {
+                    
+                }
+            });
+            $.ajax({
+                url: "@Url.Action("GetOverallNewDefects")",
+                DataType: "Json",
+                success: function (result) {                    
+                }
+            });
+             
+            $.ajax({
+                url: "@Url.Action("GetLast24HrsDeftecsList")",
+                DataType: "Json",
+                success: function (result) {
+                    chart1 = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'priorityDefects',
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            height: 300,
+                            // width:350
+                        },
+                        title: {
+                            text: '',
+                            style: {
+                                display: 'none'
+                            }
+
+                        },
+                        tooltip: {
+                            formatter: function () {
+                                return '<b>' + this.point.name + '</b>: ' + this.y;
+                            }
+                        },
+                        plotOptions: {
+                            pie: {
+                                borderWidth: 0,
+                                shadow: false,
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: '#666',
+                                    connectorWidth: 1,
+                                    distance: 30,
+                                    connectorColor: '#666',
+                                    formatter: function () {
+                                        return '<b>' + this.point.name + '</b> (' + this.y + ")";
+                                    }
+                                },
+                                showInLegend: true,
+                                point: {
+                                    events: {
+                                        click: function () {
+                                            getLast24HrsDefectsStatusData(this.name);
+                                        }
+                                    }
+
+                                }
+                            }
+                        },
+                        credits: { enabled: false },
+                        series: [{
+                            type: 'pie', name: 'Defects Count',
+                            data: result,
+                        }],
+                        exporting: { enabled: false }
+                    });
+                }
+            });
+
+            $.ajax({
+                url: "@Url.Action("GetMyDefectsList")",
+                DataType: "Json",
+                success: function (result) {
+                    chart2 = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'statusDefects',
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            height: 300,
+                            // width:350
+                        },
+                        title: {
+                            text: '',
+                            style: {
+                                display: 'none'
+                            }
+
+                        },
+                        tooltip: {
+                            formatter: function () {
+                                return '<b>' + this.point.name + '</b>: ' + this.y;
+                            }
+                        },
+                        plotOptions: {
+                            pie: {
+                                borderWidth: 0,
+                                shadow: false,
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: '#666',
+                                    connectorWidth: 1,
+                                    distance: 30,
+                                    connectorColor: '#666',
+                                    formatter: function () {
+                                        return '<b>' + this.point.name + '</b> (' + this.y + ")";
+                                    }
+                                },
+                                showInLegend: true,
+                                point: {
+                                    events: {
+                                        click: function () {
+                                            getMyDefectsStatusData(this.name);
+                                        }
+                                    }
+
+                                }
+                            }
+                        },
+                        credits: { enabled: false },
+                        series: [{
+                            type: 'pie', name: 'Defects Count',
+                            data: result,
+                        }],
+                        exporting: { enabled: false }
+                    });
+                }
+            });
+        });
+
+        function getMyDefectsStatusData( name) {
+            var name = name;
+            $.ajax({
+                type: "get",
+                url: "@Url.Action("GetMyDefectsStatusData")",
+                data: {
+                    //ticketdata: ticketdata,
+                    status: name
+                },
+                success: function (data) {
+                    $("#defect-data .modal-title").text("Defects by Status");
+                    $("#defect-data .modal-body").html(data);
+                    $("#defect-data").modal("show");
+                    $("#ticket-report-table").DataTable();
+                }
+            });
+        }
+
+        function getLast24HrsDefectsStatusData( name) {
+            var name = name;
+            $.ajax({
+                type: "get",
+                url: "@Url.Action("GetLast24HrsStatusData")",
+                data: {
+                    //ticketdata: ticketdata,
+                    status: name
+                },
+                success: function (data) {
+                    $("#defect-data .modal-title").text("Defects by Status");
+                    $("#defect-data .modal-body").html(data);
+                    $("#defect-data").modal("show");
+                    $("#ticket-report-table").DataTable();
+                }
+            });
+        }
+
+
+      
+
+    </script>
+
+}
+
+
+<!-- Modal -->
+<div class="modal fade" id="defect-data" tabindex="-1" role="dialog" aria-labelledby="defect-data">
+    <div class="modal-dialog modal-custom-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="defect-dataLabel"></h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

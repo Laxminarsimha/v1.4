@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s1="urn:partner.soap.sforce.com" xmlns:s0="urn:sobject.partner.soap.sforce.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="urn:fault.partner.soap.sforce.com" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="urn:partner.soap.sforce.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:sobject.partner.soap.sforce.com">
+      <s:import namespace="urn:partner.soap.sforce.com" />
+      <s:complexType name="sObject">
+        <s:sequence>
+          <s:element name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="fieldsToNull" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" nillable="true" type="s1:ID" />
+          <s:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:partner.soap.sforce.com">
+      <s:import namespace="urn:sobject.partner.soap.sforce.com" />
+      <s:simpleType name="ID">
+        <s:restriction base="s:string">
+          <s:length value="18" />
+          <s:pattern value="[a-zA-Z0-9]{18}" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="QueryLocator">
+        <s:restriction base="s:string" />
+      </s:simpleType>
+      <s:complexType name="QueryResult">
+        <s:sequence>
+          <s:element name="done" type="s:boolean" />
+          <s:element name="queryLocator" nillable="true" type="s1:QueryLocator" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="records" nillable="true" type="s0:sObject" />
+          <s:element name="size" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="searchRecords" type="s1:SearchRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="sforceReserved" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchRecord">
+        <s:sequence>
+          <s:element name="record" type="s0:sObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetUpdatedResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ids" type="s1:ID" />
+          <s:element minOccurs="0" maxOccurs="1" name="sforceReserved" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetDeletedResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="deletedRecords" type="s1:DeletedRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="sforceReserved" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeletedRecord">
+        <s:sequence>
+          <s:element name="id" type="s1:ID" />
+          <s:element name="deletedDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetServerTimestampResult">
+        <s:sequence>
+          <s:element name="timestamp" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SetPasswordResult" />
+      <s:complexType name="ResetPasswordResult">
+        <s:sequence>
+          <s:element name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetUserInfoResult">
+        <s:sequence>
+          <s:element name="currencySymbol" type="s:string" />
+          <s:element name="organizationMultiCurrency" type="s:boolean" />
+          <s:element name="organizationId" type="s1:ID" />
+          <s:element name="organizationName" type="s:string" />
+          <s:element name="userDefaultCurrencyIsoCode" type="s:string" />
+          <s:element name="userEmail" type="s:string" />
+          <s:element name="userFullName" type="s:string" />
+          <s:element name="userId" type="s1:ID" />
+          <s:element name="userLanguage" type="s:string" />
+          <s:element name="userLocale" type="s:string" />
+          <s:element name="userTimeZone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoginResult">
+        <s:sequence>
+          <s:element name="serverUrl" nillable="true" type="s:string" />
+          <s:element name="sessionId" type="s:string" />
+          <s:element name="userId" type="s1:ID" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="StatusCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="ASSIGNEE_TYPE_REQUIRED" />
+          <s:enumeration value="CANNOT_CASCADE_PRODUCT_ACTIVE" />
+          <s:enumeration value="CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY" />
+          <s:enumeration value="CANNOT_REPARENT_RECORD" />
+          <s:enumeration value="CANNOT_RESOLVE_NAME" />
+          <s:enumeration value="CANNOT_UPDATE_CONVERTED_LEAD" />
+          <s:enumeration value="CANT_DISABLE_CORP_CURRENCY" />
+          <s:enumeration value="CANT_UNSET_CORP_CURRENCY" />
+          <s:enumeration value="CHILD_SHARE_FAILS_PARENT" />
+          <s:enumeration value="CIRCULAR_DEPENDENCY" />
+          <s:enumeration value="CUSTOM_ENTITY_OR_FIELD_LIMIT" />
+          <s:enumeration value="CUSTOM_FIELD_INDEX_LIMIT_EXCEEDED" />
+          <s:enumeration value="DELETE_FAILED" />
+          <s:enumeration value="DEPENDENCY_EXISTS" />
+          <s:enumeration value="DUPLICATE_CASE_SOLUTION" />
+          <s:enumeration value="DUPLICATE_DEVELOPER_NAME" />
+          <s:enumeration value="DUPLICATE_MASTER_LABEL" />
+          <s:enumeration value="DUPLICATE_USERNAME" />
+          <s:enumeration value="DUPLICATE_VALUE" />
+          <s:enumeration value="ENTITY_FAILED_IFLASTMODIFIED_ON_UPDATE" />
+          <s:enumeration value="ENTITY_IS_ARCHIVED" />
+          <s:enumeration value="ENTITY_IS_DELETED" />
+          <s:enumeration value="ENTITY_IS_LOCKED" />
+          <s:enumeration value="FAILED_ACTIVATION" />
+          <s:enumeration value="FIELD_INTEGRITY_EXCEPTION" />
+          <s:enumeration value="INACTIVE_OWNER_OR_USER" />
+          <s:enumeration value="INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY" />
+          <s:enumeration value="INSUFFICIENT_ACCESS_OR_READONLY" />
+          <s:enumeration value="INVALID_ACCESS_LEVEL" />
+          <s:enumeration value="INVALID_ARGUMENT_TYPE" />
+          <s:enumeration value="INVALID_ASSIGNEE_TYPE" />
+          <s:enumeration value="INVALID_ASSIGNMENT_RULE" />
+          <s:enumeration value="INVALID_BATCH_OPERATION" />
+          <s:enumeration value="INVALID_CREDIT_CARD_INFO" />
+          <s:enumeration value="INVALID_CROSS_REFERENCE_KEY" />
+          <s:enumeration value="INVALID_CROSS_REFERENCE_TYPE_FOR_FIELD" />
+          <s:enumeration value="INVALID_CURRENCY_ISO" />
+          <s:enumeration value="INVALID_EMAIL_ADDRESS" />
+          <s:enumeration value="INVALID_EMPTY_KEY_OWNER" />
+          <s:enumeration value="INVALID_FIELD_FOR_INSERT_UPDATE" />
+          <s:enumeration value="INVALID_FILTER_ACTION" />
+          <s:enumeration value="INVALID_ID_FIELD" />
+          <s:enumeration value="INVALID_LINEITEM_CLONE_STATE" />
+          <s:enumeration value="INVALID_OPERATOR" />
+          <s:enumeration value="INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST" />
+          <s:enumeration value="INVALID_STATUS" />
+          <s:enumeration value="INVALID_TYPE" />
+          <s:enumeration value="INVALID_TYPE_FOR_OPERATION" />
+          <s:enumeration value="INVALID_TYPE_ON_FIELD_IN_RECORD" />
+          <s:enumeration value="LAST_MODIFIED_SINCE_TOO_OLD" />
+          <s:enumeration value="LICENSE_LIMIT_EXCEEDED" />
+          <s:enumeration value="MALFORMED_ID" />
+          <s:enumeration value="MAXIMUM_CCEMAILS_EXCEEDED" />
+          <s:enumeration value="MAXIMUM_DASHBOARD_COMPONENTS_EXCEEDED" />
+          <s:enumeration value="MAXIMUM_SIZE_OF_ATTACHMENT" />
+          <s:enumeration value="MAXIMUM_SIZE_OF_DOCUMENT" />
+          <s:enumeration value="MAX_ACTIONS_PER_RULE_EXCEEDED" />
+          <s:enumeration value="MAX_ACTIVE_RULES_EXCEEDED" />
+          <s:enumeration value="MAX_TASK_DESCRIPTION_EXCEEEDED" />
+          <s:enumeration value="MISSING_ARGUMENT" />
+          <s:enumeration value="NUMBER_OUTSIDE_VALID_RANGE" />
+          <s:enumeration value="REQUIRED_FIELD_MISSING" />
+          <s:enumeration value="SHARE_NEEDED_FOR_CHILD_OWNER" />
+          <s:enumeration value="STANDARD_PRICE_NOT_DEFINED" />
+          <s:enumeration value="STORAGE_LIMIT_EXCEEDED" />
+          <s:enumeration value="TEXT_DATA_OUTSIDE_SUPPORTED_CHARSET" />
+          <s:enumeration value="UNKNOWN_EXCEPTION" />
+          <s:enumeration value="UNSPECIFIED_EMAIL_ADDRESS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="fields" nillable="true" type="s:string" />
+          <s:element name="message" type="s:string" />
+          <s:element name="statusCode" type="s1:StatusCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SaveResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="errors" nillable="true" type="s1:Error" />
+          <s:element name="id" type="s1:ID" />
+          <s:element name="success" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeleteResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="errors" nillable="true" type="s1:Error" />
+          <s:element name="id" type="s1:ID" />
+          <s:element name="success" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DescribeSObjectResult">
+        <s:sequence>
+          <s:element name="activateable" type="s:boolean" />
+          <s:element name="createable" type="s:boolean" />
+          <s:element name="custom" type="s:boolean" />
+          <s:element name="deletable" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="fields" nillable="true" type="s1:Field" />
+          <s:element name="label" type="s:string" />
+          <s:element name="name" type="s:string" />
+          <s:element name="queryable" type="s:boolean" />
+          <s:element name="retrieveable" type="s:boolean" />
+          <s:element name="replicateable" type="s:boolean" />
+          <s:element name="searchable" type="s:boolean" />
+          <s:element name="updateable" type="s:boolean" />
+          <s:element name="undeletable" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DescribeGlobalResult">
+        <s:sequence>
+          <s:element name="encoding" nillable="true" type="s:string" />
+          <s:element name="maxBatchSize" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="types" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="fieldType">
+        <s:restriction base="s:string">
+          <s:enumeration value="string" />
+          <s:enumeration value="picklist" />
+          <s:enumeration value="combobox" />
+          <s:enumeration value="reference" />
+          <s:enumeration value="base64" />
+          <s:enumeration value="boolean" />
+          <s:enumeration value="currency" />
+          <s:enumeration value="textarea" />
+          <s:enumeration value="int" />
+          <s:enumeration value="double" />
+          <s:enumeration value="percent" />
+          <s:enumeration value="phone" />
+          <s:enumeration value="id" />
+          <s:enumeration value="date" />
+          <s:enumeration value="datetime" />
+          <s:enumeration value="url" />
+          <s:enumeration value="email" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="soapType">
+        <s:restriction base="s:string">
+          <s:enumeration value="tns:ID" />
+          <s:enumeration value="xsd:base64Binary" />
+          <s:enumeration value="xsd:boolean" />
+          <s:enumeration value="xsd:double" />
+          <s:enumeration value="xsd:int" />
+          <s:enumeration value="xsd:string" />
+          <s:enumeration value="xsd:date" />
+          <s:enumeration value="xsd:dateTime" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Field">
+        <s:sequence>
+          <s:element name="byteLength" type="s:int" />
+          <s:element name="createable" type="s:boolean" />
+          <s:element name="custom" type="s:boolean" />
+          <s:element name="digits" type="s:int" />
+          <s:element name="filterable" type="s:boolean" />
+          <s:element name="label" type="s:string" />
+          <s:element name="length" type="s:int" />
+          <s:element name="name" type="s:string" />
+          <s:element name="nameField" type="s:boolean" />
+          <s:element name="nillable" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="picklistValues" nillable="true" type="s1:PicklistEntry" />
+          <s:element name="precision" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="referenceTo" nillable="true" type="s:string" />
+          <s:element name="restrictedPicklist" type="s:boolean" />
+          <s:element name="scale" type="s:int" />
+          <s:element name="soapType" type="s1:soapType" />
+          <s:element name="type" type="s1:fieldType" />
+          <s:element name="updateable" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PicklistEntry">
+        <s:sequence>
+          <s:element name="active" type="s:boolean" />
+          <s:element name="defaultValue" type="s:boolean" />
+          <s:element name="label" type="s:string" />
+          <s:element name="value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="login">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="username" type="s:string" />
+            <s:element name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:LoginResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="describeSObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="sObjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="describeSObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:DescribeSObjectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="describeGlobal">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="describeGlobalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:DescribeGlobalResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="unbounded" name="sObjects" type="s0:sObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="unbounded" name="result" type="s1:SaveResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="unbounded" name="sObjects" type="s0:sObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="unbounded" name="result" type="s1:SaveResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="unbounded" name="ids" type="s1:ID" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="unbounded" name="result" type="s1:DeleteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieve">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="fieldList" type="s:string" />
+            <s:element name="sObjectType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="unbounded" name="ids" type="s1:ID" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="result" nillable="true" type="s0:sObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUpdated">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="sObjectType" type="s:string" />
+            <s:element name="startDate" type="s:dateTime" />
+            <s:element name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUpdatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:GetUpdatedResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeleted">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="sObjectType" type="s:string" />
+            <s:element name="startDate" type="s:dateTime" />
+            <s:element name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeletedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:GetDeletedResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="query">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="queryString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="queryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:QueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="queryMore">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="queryLocator" type="s1:QueryLocator" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="queryMoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:QueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="search">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="searchString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:SearchResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServerTimestamp">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="getServerTimestampResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:GetServerTimestampResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="userId" type="s1:ID" />
+            <s:element name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:SetPasswordResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="userId" type="s1:ID" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:ResetPasswordResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInfo">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="result" type="s1:GetUserInfoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="sessionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="client" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="batchSize" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="autoAssign" type="s:boolean" />
+            <s:element name="assignmentRuleId" type="s1:ID" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:fault.partner.soap.sforce.com">
+      <s:simpleType name="ExceptionCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="API_CURRENTLY_DISABLED" />
+          <s:enumeration value="API_DISABLED_FOR_ORG" />
+          <s:enumeration value="EXCEEDED_ID_LIMIT_ON_RETRIEVE" />
+          <s:enumeration value="EXCEEDED_QUOTA" />
+          <s:enumeration value="EXCEEDED_RATE_LIMIT" />
+          <s:enumeration value="FUNCTIONALITY_NOT_ENABLED" />
+          <s:enumeration value="INSUFFICIENT_ACCESS" />
+          <s:enumeration value="INVALID_BATCH_SIZE" />
+          <s:enumeration value="INVALID_CLIENT" />
+          <s:enumeration value="INVALID_FIELD" />
+          <s:enumeration value="INVALID_LOGIN" />
+          <s:enumeration value="INVALID_QUERY_FILTER_OPERATOR" />
+          <s:enumeration value="INVALID_QUERY_LOCATOR" />
+          <s:enumeration value="INVALID_REPLICATION_DATE" />
+          <s:enumeration value="INVALID_SEARCH" />
+          <s:enumeration value="INVALID_SEARCH_SCOPE" />
+          <s:enumeration value="INVALID_SESSION_ID" />
+          <s:enumeration value="INVALID_TYPE" />
+          <s:enumeration value="LOGIN_DURING_RESTRICTED_DOMAIN" />
+          <s:enumeration value="LOGIN_DURING_RESTRICTED_TIME" />
+          <s:enumeration value="MALFORMED_QUERY" />
+          <s:enumeration value="MALFORMED_SEARCH" />
+          <s:enumeration value="ORG_LOCKED" />
+          <s:enumeration value="PASSWORD_LOCKOUT" />
+          <s:enumeration value="SERVER_UNAVAILABLE" />
+          <s:enumeration value="TRIAL_EXPIRED" />
+          <s:enumeration value="UNKNOWN_EXCEPTION" />
+          <s:enumeration value="UNSUPPORTED_API_VERSION" />
+          <s:enumeration value="UNSUPPORTED_CLIENT" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ApiFault">
+        <s:sequence>
+          <s:element name="exceptionCode" type="s2:ExceptionCode" />
+          <s:element name="exceptionMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoginFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="LoginFault" type="s2:LoginFault" />
+      <s:complexType name="InvalidSObjectFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InvalidSObjectFault" type="s2:InvalidSObjectFault" />
+      <s:complexType name="InvalidFieldFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InvalidFieldFault" type="s2:InvalidFieldFault" />
+      <s:complexType name="MalformedQueryFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MalformedQueryFault" type="s2:MalformedQueryFault" />
+      <s:complexType name="InvalidQueryLocatorFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InvalidQueryLocatorFault" type="s2:InvalidQueryLocatorFault" />
+      <s:complexType name="MalformedSearchFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MalformedSearchFault" type="s2:MalformedSearchFault" />
+      <s:complexType name="InvalidIdFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InvalidIdFault" type="s2:InvalidIdFault" />
+      <s:complexType name="UnexpectedErrorFault">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:ApiFault" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UnexpectedErrorFault" type="s2:UnexpectedErrorFault" />
+    </s:schema>
+  </types>
+  <message name="Header">
+    <part name="SessionHeader" element="s1:SessionHeader" />
+    <part name="SaveOptions" element="s1:SaveOptions" />
+    <part name="QueryOptions" element="s1:QueryOptions" />
+    <part name="CallOptions" element="s1:CallOptions" />
+  </message>
+  <message name="ApiFault">
+    <part name="fault" type="s2:ApiFault" />
+  </message>
+  <message name="LoginFault">
+    <part name="fault" element="s2:LoginFault" />
+  </message>
+  <message name="InvalidSObjectFault">
+    <part name="fault" element="s2:InvalidSObjectFault" />
+  </message>
+  <message name="InvalidFieldFault">
+    <part name="fault" element="s2:InvalidFieldFault" />
+  </message>
+  <message name="MalformedQueryFault">
+    <part name="fault" element="s2:MalformedQueryFault" />
+  </message>
+  <message name="InvalidQueryLocatorFault">
+    <part name="fault" element="s2:InvalidQueryLocatorFault" />
+  </message>
+  <message name="MalformedSearchFault">
+    <part name="fault" element="s2:MalformedSearchFault" />
+  </message>
+  <message name="InvalidIdFault">
+    <part name="fault" element="s2:InvalidIdFault" />
+  </message>
+  <message name="UnexpectedErrorFault">
+    <part name="fault" element="s2:UnexpectedErrorFault" />
+  </message>
+  <message name="loginRequest">
+    <part name="parameters" element="s1:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="s1:loginResponse" />
+  </message>
+  <message name="describeSObjectRequest">
+    <part name="parameters" element="s1:describeSObject" />
+  </message>
+  <message name="describeSObjectResponse">
+    <part name="parameters" element="s1:describeSObjectResponse" />
+  </message>
+  <message name="describeGlobalRequest">
+    <part name="parameters" element="s1:describeGlobal" />
+  </message>
+  <message name="describeGlobalResponse">
+    <part name="parameters" element="s1:describeGlobalResponse" />
+  </message>
+  <message name="createRequest">
+    <part name="parameters" element="s1:create" />
+  </message>
+  <message name="createResponse">
+    <part name="parameters" element="s1:createResponse" />
+  </message>
+  <message name="updateRequest">
+    <part name="parameters" element="s1:update" />
+  </message>
+  <message name="updateResponse">
+    <part name="parameters" element="s1:updateResponse" />
+  </message>
+  <message name="deleteRequest">
+    <part name="parameters" element="s1:delete" />
+  </message>
+  <message name="deleteResponse">
+    <part name="parameters" element="s1:deleteResponse" />
+  </message>
+  <message name="retrieveRequest">
+    <part name="parameters" element="s1:retrieve" />
+  </message>
+  <message name="retrieveResponse">
+    <part name="parameters" element="s1:retrieveResponse" />
+  </message>
+  <message name="getDeletedRequest">
+    <part name="parameters" element="s1:getDeleted" />
+  </message>
+  <message name="getDeletedResponse">
+    <part name="parameters" element="s1:getDeletedResponse" />
+  </message>
+  <message name="getUpdatedRequest">
+    <part name="parameters" element="s1:getUpdated" />
+  </message>
+  <message name="getUpdatedResponse">
+    <part name="parameters" element="s1:getUpdatedResponse" />
+  </message>
+  <message name="queryRequest">
+    <part name="parameters" element="s1:query" />
+  </message>
+  <message name="queryResponse">
+    <part name="parameters" element="s1:queryResponse" />
+  </message>
+  <message name="queryMoreRequest">
+    <part name="parameters" element="s1:queryMore" />
+  </message>
+  <message name="queryMoreResponse">
+    <part name="parameters" element="s1:queryMoreResponse" />
+  </message>
+  <message name="searchRequest">
+    <part name="parameters" element="s1:search" />
+  </message>
+  <message name="searchResponse">
+    <part name="parameters" element="s1:searchResponse" />
+  </message>
+  <message name="getServerTimestampRequest">
+    <part name="parameters" element="s1:getServerTimestamp" />
+  </message>
+  <message name="getServerTimestampResponse">
+    <part name="parameters" element="s1:getServerTimestampResponse" />
+  </message>
+  <message name="setPasswordRequest">
+    <part name="parameters" element="s1:setPassword" />
+  </message>
+  <message name="setPasswordResponse">
+    <part name="parameters" element="s1:setPasswordResponse" />
+  </message>
+  <message name="resetPasswordRequest">
+    <part name="parameters" element="s1:resetPassword" />
+  </message>
+  <message name="resetPasswordResponse">
+    <part name="parameters" element="s1:resetPasswordResponse" />
+  </message>
+  <message name="getUserInfoRequest">
+    <part name="parameters" element="s1:getUserInfo" />
+  </message>
+  <message name="getUserInfoResponse">
+    <part name="parameters" element="s1:getUserInfoResponse" />
+  </message>
+  <portType name="Soap">
+    <operation name="login">
+      <documentation>Login to the Salesforce.com SOAP Api.</documentation>
+      <input message="s1:loginRequest" />
+      <output message="s1:loginResponse" />
+      <fault name="LoginFault" message="s1:LoginFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="describeSObject">
+      <documentation>Describe the Global state</documentation>
+      <input message="s1:describeSObjectRequest" />
+      <output message="s1:describeSObjectResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="describeGlobal">
+      <documentation>Describe an sObject</documentation>
+      <input message="s1:describeGlobalRequest" />
+      <output message="s1:describeGlobalResponse" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="create">
+      <documentation>Create a set of new sObjects</documentation>
+      <input message="s1:createRequest" />
+      <output message="s1:createResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="update">
+      <documentation>Update a set of sObjects</documentation>
+      <input message="s1:updateRequest" />
+      <output message="s1:updateResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="delete">
+      <documentation>Delete a set of sObjects</documentation>
+      <input message="s1:deleteRequest" />
+      <output message="s1:deleteResponse" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="retrieve">
+      <documentation>Get a set of sObjects</documentation>
+      <input message="s1:retrieveRequest" />
+      <output message="s1:retrieveResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="InvalidFieldFault" message="s1:InvalidFieldFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="getDeleted">
+      <documentation>Get the IDs for deleted sObjects</documentation>
+      <input message="s1:getDeletedRequest" />
+      <output message="s1:getDeletedResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="getUpdated">
+      <documentation>Get the IDs for updated sObjects</documentation>
+      <input message="s1:getUpdatedRequest" />
+      <output message="s1:getUpdatedResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="query">
+      <documentation>Create a Query Cursor</documentation>
+      <input message="s1:queryRequest" />
+      <output message="s1:queryResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="InvalidFieldFault" message="s1:InvalidFieldFault" />
+      <fault name="MalformedQueryFault" message="s1:MalformedQueryFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="queryMore">
+      <documentation>Gets the next batch of sObjects from a query</documentation>
+      <input message="s1:queryMoreRequest" />
+      <output message="s1:queryMoreResponse" />
+      <fault name="InvalidQueryLocatorFault" message="s1:InvalidQueryLocatorFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="search">
+      <documentation>Search for sObjects</documentation>
+      <input message="s1:searchRequest" />
+      <output message="s1:searchResponse" />
+      <fault name="InvalidSObjectFault" message="s1:InvalidSObjectFault" />
+      <fault name="InvalidFieldFault" message="s1:InvalidFieldFault" />
+      <fault name="MalformedSearchFault" message="s1:MalformedSearchFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="getServerTimestamp">
+      <documentation>Gets server timestamp</documentation>
+      <input message="s1:getServerTimestampRequest" />
+      <output message="s1:getServerTimestampResponse" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="setPassword">
+      <documentation>Set a user's password</documentation>
+      <input message="s1:setPasswordRequest" />
+      <output message="s1:setPasswordResponse" />
+      <fault name="InvalidIdFault" message="s1:InvalidIdFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="resetPassword">
+      <documentation>Reset a user's password</documentation>
+      <input message="s1:resetPasswordRequest" />
+      <output message="s1:resetPasswordResponse" />
+      <fault name="InvalidIdFault" message="s1:InvalidIdFault" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+    <operation name="getUserInfo">
+      <documentation>Returns standard information relevant to the current user</documentation>
+      <input message="s1:getUserInfoRequest" />
+      <output message="s1:getUserInfoResponse" />
+      <fault name="UnexpectedErrorFault" message="s1:UnexpectedErrorFault" />
+    </operation>
+  </portType>
+  <binding name="SoapBinding" type="s1:Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="LoginFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="describeSObject">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="describeGlobal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="create">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="SaveOptions" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="SaveOptions" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="retrieve">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="QueryOptions" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="InvalidFieldFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getDeleted">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getUpdated">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="query">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="QueryOptions" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="InvalidFieldFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="MalformedQueryFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="queryMore">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="QueryOptions" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidQueryLocatorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidSObjectFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="InvalidFieldFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="MalformedSearchFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getServerTimestamp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setPassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidIdFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="resetPassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidIdFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getUserInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="s1:Header" part="SessionHeader" use="literal" />
+        <soap:header message="s1:Header" part="CallOptions" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="UnexpectedErrorFault">
+        <soap:fault use="literal" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="SforceService">
+    <documentation>Sforce SOAP API</documentation>
+    <port name="Soap" binding="s1:SoapBinding">
+      <soap:address location="https://www.salesforce.com/services/Soap/u/3.0" />
+    </port>
+  </service>
+</definitions>

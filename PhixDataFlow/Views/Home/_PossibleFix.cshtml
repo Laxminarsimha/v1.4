@@ -1,0 +1,48 @@
+﻿
+@using PhixDataFlow.Models
+<div class="panel-heading center">Possible Fixes</div>
+
+<table class="table table-bordered table-striped" id="ticket-report-table-detailed">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Escalation ID</th>
+            <th>Summary</th>
+            <th>Priority</th>
+            <th>Escalation Status</th>
+            <th>Possible Fix</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            List<TicketFixesData> FilteredDataDetailed = ViewBag.FilteredData;
+            int qcsnoDetailed = 1;
+        }
+        @foreach (TicketFixesData ticket in FilteredDataDetailed)
+        {
+            <tr>
+                <td>@(qcsnoDetailed++)</td>
+                <td>@ticket.EscalationId</td>
+                <td>@ticket.Summary</td>
+                <td>@ticket.Priority</td>
+                <td>@ticket.EscalationStatus</td>
+                <td>
+                    @if (ticket.IsFixAvailable)
+                    {
+                        
+                        @Html.ActionLink(
+                                "Show File",
+                                "ShowFile",
+                                "Home",
+                                routeValues: new
+                                {
+                                    EscalationId = ticket.EscalationId,
+                                },
+                                htmlAttributes: null
+                                )
+                    }                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

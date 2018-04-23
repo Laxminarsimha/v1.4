@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header" data-background-color="blue">
+                <i class="material-icons">search</i>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" id="search" class="form-control" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" >
+    <div class="col-lg-12 col-md-12 col-sm-12" id="search-display">
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#search").keypress(function () {
+                var search = $(this).val();
+                if (search.length > 2) {
+                    $.ajax({
+                        url: "@Url.Action("GetSearchedData", "Home")",
+                        data: { "search": search },
+                        success: function (result) {
+                            $("#search-display").html(result);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

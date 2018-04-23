@@ -1,0 +1,366 @@
+Escalation ID,Summary,Priority,Escalation Status
+PME-41747,Unable to complete ICs,P2 - High,New
+PME-41744,Incorrect 140% amount on the Mississippi TIC,P2 - High,New
+PME-41740,Unable to undo move out,P2 - High,New
+PME-41689,Null error when finalizing 2/11/18 GR for unit 5-504 Jenson,P2 - High,QA
+PME-41684,XML File error - SSN attribute is invalid,P2 - High,New
+PME-41682,Error message on Today's tab,P3 - Medium,QA
+PME-41613,total number of units on Tenant Profile Compliance report,P3 - Medium,New
+PME-41490,Unable to generate Annual recertification notices,P2 - High,Analysis
+PME-41456,Deposit total not available after undoing FAS,P2 - High,Dev
+PME-41435,Alerts & Approval Snapshot Not Displaying Anything,P2 - High,Analysis
+PME-41409,Incorrect unit counts on LIHTC-HUD Tenant and Project Data Worksheet,P3 - Medium,Dev
+PME-41392,Issues with termination,P2 - High,Dev
+PME-41344,INC0166700 - Status Check Error When Generating A Letter,P2 - High,Dev
+PME-41287,Ongoing  HUD repayment issues,P2 - High,New
+PME-41268,Annual recert notices not autogenerating,P2 - High,Dev
+PME-41260,Lease Addendum showing incorrect next recertification date,P2 - High,Dev
+PME-41249,Incorrect Unit Number on the Certitication,P2 - High,Dev
+PME-41248,Error on 120 day AR notices (two properties) attempting to view notices,P2 - High,Dev
+PME-41197,"Recert reporting ""N"" after unit transfer - Texas Unit Status report",P2 - High,Dev
+PME-41074,IHFA Self-Certification MI Date Error,P3 - Medium,Dev
+PME-41055,Unit numbers cut off on Future HAP Adjustments Report,P3 - Medium,Dev
+PME-41013,TRACS error: invalid release on TRACS version,P2 - High,Dev
+PME-40974,4/1/2018 voucher has incorrect adjustments,P2 - High,Dev
+PME-40961,Retroactive gross rent change created positive vacancy adjustment on occupied,P2 - High,Dev
+PME-40945,Units-Residential not updating with Affordable Rent schedule.,P2 - High,Dev
+PME-40941,Florida USR showing incorrect information in columns 14-17.,P2 - High,Dev
+PME-40911,Unable to save annual recertification notices,P3 - Medium,Dev
+PME-40903,Combining Repayment Plans,P3 - Medium,Pending Verification
+PME-40766,Screening for Applicant Latasha Renee Ross missing,P2 - High,New
+PME-40680,Billing did not post for some units,P3 - Medium,Dev
+PME-40669,Annual Recertification TIC pulling Initial effective date as the move in date,P2 - High,New
+PME-40588,Move in date on texas EAC is not matching,P2 - High,Dev
+PME-40539,AR  snapshot missing on  the today page.,P2 - High,New
+PME-40537,"""Remove unit from contract"" on termination completion is not working",P3 - Medium,New
+PME-40526,Incorrect adjustments for move out correction,P2 - High,New
+PME-40510,Unable to undo MO/MI to process UT,P2 - High,New
+PME-40505,Next Annual recertification date is incorrect,P3 - Medium,New
+PME-40451,Need assistance with HUD repay ledger,P3 - Medium,New
+PME-40438,Next Annual Recert Report shows Market renter,P3 - Medium,QA
+PME-40373,Server Was Unable to Process Request ---> Exception Has Been Thrown By The,P2 - High,Pending Verification
+PME-40298,Error message when on the Today Page XML output stream is invalid,P3 - Medium,QA
+PME-40293,Gross Rent change isn't picking up Market Units,P2 - High,Dev
+PME-40264,Annual recertification notices not running on date set up for.,P2 - High,Analysis
+PME-40254,Rental Assistance does not transmit to OSA to correct sub-property/entity,P3 - Medium,Analysis
+PME-40157,Repayment Agreement - Deferred Option,P3 - Medium,QA Complete
+PME-40155,Cannot Undo MO To Process UT For A Resident,P2 - High,Dev
+PME-40109,Missing Calculations on a 3560-8,P2 - High,Pending Verification
+PME-40076,Subsidy charges removed when undoing move out,P2 - High,Pending Analysis
+PME-40049,Incorrect Income Limit showing on the Certifications,P3 - Medium,New
+PME-40036,Month End Report,P2 - High,New
+PME-40028,Utility Reimbursement Checks Showing in RPA,P3 - Medium,New
+PME-39988,Why SSN exception code is required,P3 - Medium,Pending Analysis
+PME-39978,Old TIC showing as approved/unfinalized on the today page,P2 - High,New
+PME-39973,"Scheduled Reports Stuck ""In Process""",P2 - High,New
+PME-39915,Tax Credit Gross Rent Change Not Updating Scheduled Billing Correctly,P3 - Medium,New
+PME-39903,Utility allowance reimbursement posting incorrectly on resident ledgers,P3 - Medium,New
+PME-39866,Object reference error when updating affordable rent schedule,P2 - High,QA
+PME-39860,Letter not showing on resident,P2 - High,Analysis
+PME-39720,Household Income at Move-In,P2 - High,QA
+PME-39711,Update race ethnicity and disability fields for tenants in Oceangate,P3 - Medium,New
+PME-39699,Part IV of New Jersey TIC showing incorrect info,P2 - High,QA Complete
+PME-39605,Wrong List of applicant Uploaded,P3 - Medium,Dev
+PME-39564,Cannot select all in Bulk scheduled billing update,P2 - High,New
+PME-39532,M/O & M/O (7 mths ago) caused Ltor & Gtol,P2 - High,New
+PME-39477,Wrong name on Unit Available Notice,P3 - Medium,New
+PME-39425,PIC file only pulling one family record when there should be two,P3 - Medium,QA Complete
+PME-39393,Completed Annual Recertification Showing As Past Due On Today Page And Reports,P3 - Medium,New
+PME-39242,**Root Cause ** Program type missing on move out certification,P3 - Medium,Dev
+PME-39235,Incorrect Number of Dependents on PIC files,P2 - High,Analysis
+PME-39137,Onesite unit status report does not pull income limits at move in,P2 - High,Dev
+PME-39073,Resident Selection Preferences Report not showing any Data,P2 - High,Dev
+PME-38977,Move in dates missing from Waiting List Report,P3 - Medium,Dev
+PME-38884,Error: SiteID='2003619' FileID='237540' Message: Error attempting to download file - File not found error message,P2 - High,Analysis
+PME-38682,Apply Now Wizard does not finish,P3 - Medium,Dev
+PME-38637,Next Annual Recerts report,P2 - High,Dev
+PME-38619,Special Claim Not Showing In Claims Finder,P2 - High,Dev
+PME-38477,Unable to transfer Household is over the income limit for the current set-aside,P2 - High,Dev
+PME-38472,Data fix/rebuild for Ashburn part of CRC Property Management,P3 - Medium,Dev
+PME-38427,Ongoing issue with Gross rent Change,P3 - Medium,Dev
+PME-38426,Unable to redistribute unclaimed utility check,P2 - High,Analysis
+PME-38421,Unable to correct a certification due to Error Arithmetic Overflow,P3 - Medium,Dev
+PME-38385,Electronic Report is not showing all events on all the units when being uploaded,P2 - High,Dev
+PME-38383,** Root Cause ** Initial did not pull $27 UA,P3 - Medium,Dev
+PME-38381,Residents not showing up for letters,P3 - Medium,Dev
+PME-38374,The reports keeps changing values.,P2 - High,Dev
+PME-38367,SSN showing in Alien Registration field in Electronic Report,P3 - Medium,Dev
+PME-38364,Rent schedule has not updated Units - Residential,P2 - High,Analysis
+PME-38334,INC0161311 - Onesite- TRAC corrections,P3 - Medium,Pending Verification
+PME-38321,Florida USR report incorrectly reporting in columb 7b,P2 - High,New
+PME-38284,Unable to transfer manager unit,P2 - High,Dev
+PME-38226,Unable to Process Annual Recertification,P2 - High,Dev
+PME-38183,applicants are put under the Low Income limit instead of the applicable VL or E,P3 - Medium,New
+PME-38142,Duplicate Annual Recert Notices in PDF,P3 - Medium,Dev
+PME-38036,Scheduled billing did not update correctly off of certifications.,P3 - Medium,Dev
+PME-38033,Scheduled billing is not following certifications.,P3 - Medium,Dev
+PME-38011,Termination not pushing correct scheduled billing dates and incorrect in new lease,P3 - Medium,New
+PME-37915,N-203 not showing as occupied on FL USR,P2 - High,Dev
+PME-37897,INC0160094 - Incorrect Section 236 Tenant Rent Calculation,P2 - High,Dev
+PME-37698,Alabama Rent Roll showing incorrect move in %,P2 - High,Dev
+PME-37654,INC0159939 - Enter previous Make ready dates for Occupied units,P2 - High,New
+PME-37632,Member order on the TIC needs to match the order on the Application,P3 - Medium,New
+PME-37596,Income Statement Budget Comparison,P3 - Medium,New
+PME-37552,Incorrect HOH listed in Rent roll report for prior date,P2 - High,New
+PME-37540,INC0159899 -  Check Status error when generating a Lease/Letter,P2 - High,New
+PME-37517,LTOL /GTOL off on 2 units.,P2 - High,New
+PME-37507,Florida USR report is reflecting incorrect most recent certification,P2 - High,New
+PME-37436,Excess Income Report (EIR) is not Pulling Up any Data,P2 - High,Dev
+PME-37385,Special claims not showing post UT,P2 - High,Dev
+PME-37359,updated utility allowances are not showing up in scheduled billing,P2 - High,Dev
+PME-37337,Affordable rent roll report missing 2 unit designations.,P3 - Medium,Dev
+PME-37304,Applicant not showing on waitlist for correct unit size for a specific date,P2 - High,Dev
+PME-37294,ALABAMA RENT ROLL FOR HOME PULLING INCORRECT DATA,P2 - High,Dev
+PME-37293,Security Deposit not added at movein,P3 - Medium,Dev
+PME-37223,** ROOT CAUSE ** Transferring from 236 to Section 8 is marking IC as transfer,P3 - Medium,Dev
+PME-37137,Property never showing loss or gain to lease.,P3 - Medium,Analysis
+PME-37119,Unable to create report. Please review history file file id 7036907 for more i<BR>nformation.,P2 - High,Dev
+PME-37093,Unable To Generate Lease From Certification: Unable to Generate Transfer Lease,P2 - High,Dev
+PME-37038,RCA: GR certs for Rad Phase in found under RAP program,P3 - Medium,Dev
+PME-37034,Root Cause: System did not create move out 50059s,P3 - Medium,Analysis
+PME-36919,Deactivated relationship statuses keep reverting back to Active,P2 - High,New
+PME-36725,"Missing ""New"" button when viewing Verification's",P2 - High,Dev
+PME-36693,Next application number incorrect,P2 - High,Dev
+PME-36538,MAT Record of 03/01/18 AR Missing Race Indicator,P3 - Medium,Dev
+PME-36498,Unable to upload lease with UMF fields,P2 - High,New
+PME-36456,Gross Rent Change caused previous FAS accounts to change,P2 - High,Dev
+PME-36450,Unable to view the Certifications Tab on IE 11.,P2 - High,New
+PME-36411,Applicant address not updating,P2 - High,QA Complete
+PME-36373,Units Residential - market rents show 0,P2 - High,New
+PME-36309,UUI,P3 - Medium,QA Complete
+PME-36229,TRACS Error No Ethnicity,P3 - Medium,New
+PME-36165,no option to undo reversed transaction,P2 - High,New
+PME-36003,Unable to override renter's insurance on transfer for Blyakhman,P2 - High,New
+PME-35898,Required Security Deposit does Not Automatically Populate After Move In Is Completed,P2 - High,New
+PME-35865,Lease Start date on renewal letter incorrect,P3 - Medium,New
+PME-35844,Ledger listing incorrectly post repayment agreement,P2 - High,New
+PME-35610,Annual Recertification Interview Dates not showing correctly,P2 - High,Dev
+PME-35599,Change Program Set up.,P3 - Medium,New
+PME-35570,Needs to edit AR notices,P3 - Medium,New
+PME-35520,Can not print gross rent- Program stops responding,P3 - Medium,New
+PME-35512,Error When Generating Annual Recertification Notices,P3 - Medium,Dev
+PME-35454,Duplicate Rent Charges on Rent Roll Detail Report,P3 - Medium,New
+PME-35428,Undo Move Out reversed all CA charges on the ledger and erased demographics,P2 - High,Pending Analysis
+PME-35419,Unit 001.0502 Blackwell: Edit Active Repay Agreement Effective Date,P2 - High,Dev
+PME-35241,Affordable Mailing Labels when generated are cut off,P3 - Medium,New
+PME-35219,Root Cause: Household members duplicated,P3 - Medium,New
+PME-35205,50058 adding a unit rent amount to a unit using floor plan rents.,P2 - High,Pending Dev
+PME-35120,Apartment information report discrepancy,P3 - Medium,New
+PME-35061,Running Gross Rent removes repayment Flags,P3 - Medium,New
+PME-34927,Override option not showing on part 3,P2 - High,New
+PME-34905,Error when print AR notices,P2 - High,New
+PME-34895,Certification Did Not Update Scheduled Billing Or The Ledgers,P3 - Medium,New
+PME-34778,Stop AR notices from generating for deactivated contract,P3 - Medium,Dev
+PME-34745,Program Compliance Report Units Out of Order - Site #3827707,P3 - Medium,New
+PME-34721,Error When Goiing to Resident's Activity Tab,P2 - High,Pending Dev
+PME-34613,New applicable fraction not calculating correctly,P2 - High,New
+PME-34528,Aff Waitlist - Unable to Offer Unit to Transfer tenant with no open offer,P3 - Medium,Dev
+PME-34524,COL Electronic Report 2017,P2 - High,New
+PME-34507,Root Cause: Printed HAP requests incorrect each month,P2 - High,New
+PME-34468,Glendale- Two residents are not showing correctly on the Rent Roll Detail Report,P2 - High,New
+PME-34441,Unit Turnover Report Not Pulling Vacancies Correctly,P2 - High,New
+PME-34411,Florida USR Excel Extract Complete Report,P2 - High,New
+PME-34299,Bulk Certification Printing Not Printing 02/01/2018 AR Corrections,P2 - High,QA
+PME-34281,Move in creating duplicate prospects,P2 - High,New
+PME-34176,Editing parameters on HUD Repay Activity report does not save,P3 - Medium,New
+PME-34076,Repayment Agreement would not calculate monthly payments,P2 - High,Dev
+PME-34014,Gross rent incorrect on Pg 6 Monthly Transaction summary,P3 - Medium,New
+PME-33707,Project Move-In Date not popualting on MAT 15 for some 50059s,P2 - High,Dev
+PME-33666,Trying to process the 2/2018 HAP request and found a few discrepancies.,P2 - High,Dev
+PME-33638,FW: Results of WHEDA processing of file: OS WC 5116 1-1-17 to 12-31-17.xml,P3 - Medium,New
+PME-33437,Recertification notice dates,P2 - High,New
+PME-33288,MI date on Certification Online System,P2 - High,New
+PME-33261,Three Round Towers - December 2017 Transaction by Summary by Unit,P3 - Medium,New
+PME-33057,Rental Assistance information not pulling to the Florida USR Report,P2 - High,New
+PME-33051,Verification dates are incorrect again previous defects 557231/581728,P2 - High,Dev
+PME-32974,Special claims not hitting the Special claims revenue account in OSA,P3 - Medium,New
+PME-32829,January event showing on Nov-Dec report,P2 - High,Dev
+PME-32809,Unable to upload Electronic reporting- receiving errors,P3 - Medium,New
+PME-32807,5220 ACCOUNT IS REPORTING C006 WRONG,P2 - High,New
+PME-32797,resident ledger shows balance with Repayment plan,P3 - Medium,New
+PME-32740,gnerate  NAHMA 2.0 xml at Realpage central,P3 - Medium,New
+PME-32446,Showing prepaid on REPAY in Accounting View,P3 - Medium,New
+PME-32427,Previous rent charges not reversed when retro IC run,P2 - High,Dev
+PME-32392,Regular Vacancy Claims showing twice in bank deposit,P2 - High,Dev
+PME-32358,Missing Miscellaneous Income journal entries.,P3 - Medium,New
+PME-32267,Repayment certifications created ledger balance,P3 - Medium,New
+PME-32201,XML File throwing error - WHEDA,P2 - High,Pending Analysis
+PME-32192,RCA: Annual recert date change,P3 - Medium,New
+PME-32038,Annual recert notices did not generate correctly on 1/1/18,P2 - High,Dev
+PME-32025,Letters and notices Recipient Name Display,P3 - Medium,New
+PME-31844,#902:  HCV Rental Assistance: Mid-Lease Certification Changes,P3 - Medium,Analysis
+PME-31725,Two units not included on Scheduled Billing,P2 - High,Dev
+PME-31666,Default dates being used in Annual Recert creation instead of entered variables.,P3 - Medium,New
+PME-31474,Transfer to unit 378-003G is complete but cert is not final,P3 - Medium,Dev
+PME-31117,Missing income designation in NAHMA USR,P2 - High,New
+PME-31058,Customize Effective date of recerts,P3 - Medium,New
+PME-30919,Special Claims,P3 - Medium,New
+PME-30811,User Assigned Right issue after activating the Waitlist,P3 - Medium,Analysis
+PME-30669,Unable to edit member info in electronic reports,P3 - Medium,New
+PME-30494,Root Cause Analysis - Market units on HAP.,P3 - Medium,New
+PME-30372,Lease amendment pulling incorrect amounts,P3 - Medium,New
+PME-30329,Kentucky Transfer TIC Move In date discrepancy,P2 - High,Analysis
+PME-30244,Next Annual Recertification of tenants are incorrect,P3 - Medium,New
+PME-30119,Updated income limit table did not save but appeared on certifications,P3 - Medium,New
+PME-30067,HAP Common Ledger with multiple contracts/subproperties,P3 - Medium,New
+PME-29764,Unit Transfer Instead of Move out,P2 - High,Dev
+PME-29640,RD site Delinquent and prepaid showing HUDREPAY sub-journal.,P3 - Medium,Dev
+PME-28986,50058/TIC are not calculating based off of the income based ceiling.,P3 - Medium,Analysis
+PME-28923,Rent Roll Detail Pulling RENT Instead Of SUBRENT,P2 - High,QA Complete
+PME-28806,Verification Responses Report shows NO DATA on Unit 023,P2 - High,New
+PME-28804,Root Cause: Incorrect project move in dates on 50059s,P3 - Medium,Dev
+PME-28788,Correct Tax Credit max rent not generating when non-optional charges are included in Gross Rent calculation,P3 - Medium,New
+PME-28775,Residual receipt not balancing on Misc Income Ledger,P2 - High,New
+PME-28711,After posting the HAP payment the bank deposit is not matching the distributed amount.,P3 - Medium,Dev
+PME-28537,Unable to adjust the MO certs to current to be able to undo,P2 - High,Dev
+PME-28485,Negative open balance on HAP common ledger,P3 - Medium,New
+PME-28404,Former Resident Shows on The Delinquent and Prepaid Report,P2 - High,New
+PME-28368,Zero dollar asset values showing up on 50059s when separate tracking for HUD/TC enabled,P3 - Medium,Dev
+PME-28330,RCA:  Co-head found to be inactive,P3 - Medium,New
+PME-28308,Unable to activate RAD Contract,P2 - High,New
+PME-28145,Root Cause:  Unable to view or verify Future Income.,P3 - Medium,New
+PME-28058,Annual Recertification Notices - Unable to populate the complete unit number,P3 - Medium,QA Complete
+PME-27858,Unit Rent is Pulling Up Incorrect Rent Schedule,P2 - High,New
+PME-27856,Renewed lease is showing wrong lease dates on model lease,P3 - Medium,New
+PME-27579,Certification on Line - errors,P2 - High,Analysis
+PME-27112,The electronic signature was not successful,P3 - Medium,New
+PME-26915,Annual certifications snapshot missing from Today page,P2 - High,New
+PME-26864,Subsidy scheduled billing & ledger not updating when Certification is created at multiple properties,P3 - Medium,Dev
+PME-26786,Need confirmation and possible removal of duplicate transaction on the repayment ledger.,P3 - Medium,New
+PME-26664,Next Recert date is incorrect on lease,P2 - High,New
+PME-26663,Future Aff Rent Schedule rate not pulling to Future Annual TICs,P3 - Medium,Dev
+PME-26622,Repay Issue,P3 - Medium,New
+PME-26471,SSN changed on the certifications even though the demographics is not editted,P2 - High,Analysis
+PME-26391,Removing Race and Ethnicity from the application process,P3 - Medium,New
+PME-26264,Landings - 50058 files erroring when uploading to PIC system,P2 - High,QA Complete
+PME-26250,Incorrect renewal rate on 12 month term,P3 - Medium,Analysis
+PME-26139,HAP showing incorrect ending balance for repayment agreement,P3 - Medium,Dev
+PME-26137,Monthly Rent Bill showing incorrect amounts.,P3 - Medium,New
+PME-26071,Imputed Asset not counting in cash value,P2 - High,Analysis
+PME-26020,Onesite process on terminations.,P2 - High,Analysis
+PME-25946,Cert Audit records removed when TIC Corrected or Deleted,P3 - Medium,New
+PME-25852,Bulk printing approved ICs,P2 - High,New
+PME-25823,GRC wiped out all financial data for transferred tenants.,P3 - Medium,New
+PME-25799,Unit missing from Apartment Information report,P2 - High,New
+PME-25236,Unable to print eligibility summary.  PublicKeyToken=null' is not marked as serializable.,P2 - High,QA Complete
+PME-24804,Reverse Move Out is reversing the HAP payment.,P3 - Medium,New
+PME-24756,Unit meets rent restriction box not checking on Indiana TIC,P2 - High,New
+PME-24657,Differences between delinquency and tenant ledger,P3 - Medium,New
+PME-24367,Unit still shows tied to program after EOP,P3 - Medium,New
+PME-24219,Rent didn't prorate correctly during transfer,P3 - Medium,New
+PME-24216,Waitlist incorrect after conversion,P2 - High,New
+PME-24098,RCA: Lease renewals occasionally dropping GOVT in scheduled billing,P3 - Medium,New
+PME-24061,TIC,P3 - Medium,Pending Priority Assessment
+PME-23998,Required task of collect first's month's rent is not reflecting prorated amount,P2 - High,New
+PME-22655,Adjusted Income not showing on TIC,P2 - High,Analysis
+PME-22495,Cannot reverse a credit,P3 - Medium,Pending Analyst Assignment
+PME-22163,RCA: New resident not showing on PW,P3 - Medium,New
+PME-22043,Gross Rent Change adjustments off by a dollar for some not all,P3 - Medium,Analysis
+PME-22018,Affordable Waitlist Does Not Differentiate Affordable Units and Units Not In Sequential Order,P2 - High,New
+PME-21877,Incorrect TTP calculation for unit 07 (Stephens),P2 - High,New
+PME-21213,AHP Renewl Process Pulls Rents from YieldStar and Not from Final TIC,P3 - Medium,New
+PME-21204,Entering TIC doesn't update rent & subsidy amounts,P3 - Medium,Pending Dev
+PME-20728,Root cause analysis: Transfer flag on MI cert,P3 - Medium,Dev
+PME-20608,Processing a GRC for 9 units tax credit specific that is pulling in the wrong rent.,P3 - Medium,New
+PME-20576,The rent override function is showing up on certs other than Term,P3 - Medium,New
+PME-20568,Unable To View 3560-29 Part II Of 09/01/2017 PW Due To Error,P2 - High,New
+PME-20461,Gorman Occupancy Report will not generate for end of business day Mondays,P2 - High,New
+PME-20074,Would like to bulk move transaction from one sub-journal to another,P3 - Medium,New
+PME-20070,Incorrect calculations on 6/29/17 IR for unit 03021,P2 - High,Pending Analysis
+PME-19931,Real estate asset payoff exceeds balance,P3 - Medium,New
+PME-19831,Texas Electronic Reporting,P3 - Medium,New
+PME-19809,Unit Turnover Report missing vacant units,P3 - Medium,Analysis
+PME-19197,120 day notices missing,P3 - Medium,Dev
+PME-19172,Gain to lease on all units following 8/4/17 GRC,P2 - High,New
+PME-19123,Repayment agreement for #320,P3 - Medium,New
+PME-19103,Verification letters not generating,P2 - High,New
+PME-19092,Discrepancy between merge field test and use in documents,P3 - Medium,Pending Analysis
+PME-19018,Unable to import waitlist with application numbers,P2 - High,Dev
+PME-18992,Electronic Reporting: Scheduled Billing Changes & Electronic Reporting (Texas),P2 - High,New
+PME-18828,Certification required for parking spot move in (2-PK 15),P2 - High,New
+PME-18776,Missing Gross Rent Certifications on residents,P3 - Medium,New
+PME-18414,INTERNAL ESCALATION - Catholic Housing Management - St. Andrew Towers II: Periodic Assessment Letters Not Generating in the Sort Order,P3 - Medium,New
+PME-18296,RCA: MO activity duplicating at both properties under PMC,P3 - Medium,New
+PME-18193,Unable to write off former resident's ledger,P3 - Medium,New
+PME-18168,Unable to add vacancy claim for unit E550B0,P2 - High,Pending Dev
+PME-17611,Hap Voucher Adjustments are consistently incorrect for a Termination following an AR and AR-Correction,P2 - High,Analysis
+PME-17300,RCA: Florida USR not populating NARD for units,P3 - Medium,New
+PME-16877,MO/IC created for transfers between contracts with the same project number,P2 - High,New
+PME-16435,50059 Shows an Amount at field 109,P3 - Medium,New
+PME-16001,Field #12 not a valid date/time,P3 - Medium,Dev
+PME-15939,"Unable To Complete Correction Due To ""Information Changed"" Message",P3 - Medium,Dev
+PME-15909,Certifications not updating Rent in Units-Residential,P3 - Medium,New
+PME-15648,HAP payment discrepancies,P2 - High,New
+PME-15626,Unable to generate lease post UT,P2 - High,New
+PME-15505,System Adjustment Postings,P3 - Medium,Analysis
+PME-15239,Affordable Mailing Label Report not formatting properly,P3 - Medium,New
+PME-14958,120 90 and 60 day notices not auto generating,P2 - High,Dev
+PME-14909,Root Cause: Residents appearing in wrong households,P3 - Medium,New
+PME-14706,HAP posting more than once,P2 - High,New
+PME-14649,Bulk certification printing process hung up.,P3 - Medium,Pending Verification
+PME-14421,Verification error holding up transfer for Sintat,P2 - High,Dev
+PME-14047,Tax Credit Gross Rent shows incorrect Max Rent,P2 - High,New
+PME-13763,Electronic Reporting: Unit Household Data Reporting Incorrectly,P3 - Medium,New
+PME-13585,Move ins defaulting to wrong rent,P2 - High,New
+PME-13433,OneSite reversed Subsidy Payment in Error,P3 - Medium,New
+PME-13221,Imputed Income From Asset Duplicating On Line 17 When Submitted To USDA,P2 - High,New
+PME-13040,Switch from unit to floor plan rent on layered site,P2 - High,New
+PME-12702,Transfer not pulling correct income for Alma Garcia,P2 - High,Dev
+PME-12423,CA Requesting UT-OUT For Old Unit,P2 - High,Analysis
+PME-11753,Wrong NTC amount on the project worksheet.,P3 - Medium,Dev
+PME-11559,FW: Olive Tree 5/1/17 IC is missing from Income Targeting Report,P2 - High,New
+PME-11551,Reversed PMTOPIRD from repay subjournal,P3 - Medium,Pending Priority Assessment
+PME-10412,CA TIC is pulling wrong income limit with joint dependent.,P2 - High,New
+PME-09958,Next Annual Recertification Date For Tax Credit Did not Change,P3 - Medium,Dev
+PME-09927,"Rent Override Rule is not being selected but the certification is still populating with a ""Y""",P2 - High,Pending Dev
+PME-09294,Special Status Code not pulling into Cert Details Report,P3 - Medium,Analysis
+PME-09138,Utility Reimbursements are not showing in OneSite Accounting,P3 - Medium,New
+PME-09014,Retroactive Gross Rent Change didnt update residents rent correctly,P2 - High,Pending Dev
+PME-08490,Can we please schedule a time to chat with development and our Yieldstar team ASAP? We are now also experiencing rates changing after an applicant applied prior to us rolling out Yieldstar. For example 1708 leased at $5100 and lease signed at this rate an,P2 - High,Analysis
+PME-08171,Error with verification letters on Today page,P3 - Medium,Dev
+PME-07429,Part 4 Manual Adjusting Entries - Unclaimed Utility Reimbursement Checks Error,P3 - Medium,New
+PME-07250,Lease Details report not showing languages for applicants,P2 - High,Dev
+PME-06733,Unable to generate periodic assessment mailing labels,P2 - High,Dev
+PME-06707,Fax cover sheets missing information,P3 - Medium,Dev
+PME-06191,Eligibility Summary incorrect,P3 - Medium,Pending Analysis
+PME-06146,Tax Credit Gross rent run with only schedule billing updates but the billing did not update.,P3 - Medium,Analysis
+PME-05776,Root cause: reversed PMTOPIRD from repay subjournal,P3 - Medium,Pending Analyst Assignment
+PME-05513,SF04055894 Escalation -  Transaction code setup issue P3 - Medium,P3 - Medium,Pending Analysis
+PME-05452,Utility reimbursement for Maria Cortez not automatically extracting to OSA. P3 - Medium,P4 - Enhancement,New
+PME-05208,TICs not updating scheduled billing,P3 - Medium,New
+PME-05186,Annual recertification interview period printing incorrectly (cont),P2 - High,Dev
+PME-03807,FL USR Report Pulling Incorrect Information,P3 - Medium,New
+PME-03559,Root cause: HAPPD inconsistently reversing at move out,P3 - Medium,Pending Analysis
+PME-03496,Cert Correction overwrote move out due to death prorations,P3 - Medium,Pending Analysis
+PME-03481,Payment application on Subsidy and Resident ledger,P3 - Medium,Pending Analysis
+PME-03473,rounding on the ledger not matching the HAP,P2 - High,Pending Analysis
+PME-03309,SSN is masked on 50059 and in TRACS file,P2 - High,Analysis
+PME-03286,Incorrect ending balance on Part 6,P3 - Medium,Pending Analysis
+PME-03263,Certification is not Pulling Up the Correct UA,P2 - High,New
+PME-03242,Historical income limits showing $0 in RealPage Central,P3 - Medium,Pending Analysis
+PME-02964,Retro GR During Repayment Period,P2 - High,New
+PME-02820,Root Cause: NTC discrepancy on 1/1/17 GRC for unit 23,P3 - Medium,New
+PME-02617,Reports displaying wrong sub-property each day,P3 - Medium,Pending Analysis
+PME-02323,Incorrect app positioning on Waiting List Report,P3 - Medium,New
+PME-02284,Discrepancy between Del/Prepaid and Monthly Transaction Summary,P2 - High,New
+PME-02342,Income Calculator uses five weeks instead of four,P2 - High,Analysis
+PME-02338,Escalation - Assign rental assistance P2 - High,P2 - High,QA Complete
+PME-02415,SF04044428 Escalation -  Foster Children P3 - Medium,P3 - Medium,Pending Dev Assignment
+PME-02410,03/2017 posted HAP payment does not match Bank Deposit report,P2 - High,New
+PME-02453,TC Gross rent change activated inactive assistance,P3 - Medium,New
+PME-02448,Incorrect adjustments on the repayment ledger.,P2 - High,New
+PME-02498,Root Cause: 3/1/17 GR created 12/1/15 RENT adjustments,P3 - Medium,New
+PME-02465,SF04024893 Escalation - Retro GRs and Vacancy Calculation P2 - High,P3 - Medium,Pending Analysis
+PME-02496,SF04017991 Escalation -  Renewal Offers not pulling correct Certification pricing P2 - High,P3 - Medium,Pending Dev
+PME-02513,"Failed to transfer resident. A conflict was detected regarding unit availability of the ""from"" unit for the action: Transfer-Out-Now after Notice",P3 - Medium,Pending Analysis
+PME-02506,Site ran a 1/1/17 GRC and another 4/1/17 to update UA,P2 - High,New
+PME-02473,MO proration does not match voucher,P3 - Medium,New
+PME-02480,Mid Month Move Ins Showing Incorrect Amount,P3 - Medium,New
+PME-02507,Unable to change newborn SSN to 999990000,P3 - Medium,Analysis
+PME-02511,Root Cause - Missing Nov move out proration for Telling,P3 - Medium,Pending Analysis
+PME-02536,initial effective 12/1/2016 changes to initial effective 3/1/2016,P3 - Medium,Analysis
+PME-02537,Friendship Village - Special claims for regular vacancy on Property Disposition Sites/calculation errors,P2 - High,Pending Dev
+PME-02541,Root Cause Analysis For Section 8 Renters Terminated And Going To Market(Repayment),P3 - Medium,New
+PME-02586,Verification letter recipients continuing to disappear,P2 - High,Pending Dev
+PME-02639,Unpaid Rent claims not picked up when FAS is closed,P3 - Medium,Pending Dev
+PME-02640,Cannot make Exempt cert,P3 - Medium,QA Complete

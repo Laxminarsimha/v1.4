@@ -1,0 +1,20 @@
+Escalation ID,Summary,Priority,Escalation Status,PMCID,SITE ID
+PME-41827,Unable to remove LTOL or residents ledger,P2 - High,New,1049827,4116121
+PME-41759,A Min Rent is 'stuck' in system for HOME program,P2 - High,New,1051732,3789667
+PME-41828,Error When Generating A Document - MailMergePrep: Error Creating Data Set,P3 - Medium,New,1053418,3717326
+PME-41803,Undo Move-outs from prior periods,P2 - High,New,1053462,3562761
+PME-41689,Null error when finalizing 2/11/18 GR for unit 5-504 Jenson,P2 - High,New,1073892,3830379
+PME-41826,Unable to complete Move in,P2 - High,New,1073892,1160719
+PME-41829,Database 's2755972' does not exist. Make sure that the name is entered correct,P2 - High,Closed,1100088,1100089
+PME-41745,Transfer cannot be performed for an applicant/resident whose status is current resident,P2 - High,Closed,1310604,4215727
+PME-41812,A household member currently has an expired verification letter. A verification letter may need to be performed.,P2 - High,Closed,1330863,2118817
+PME-41684,XML File error - SSN attribute is invalid,P2 - High,Closed,1511828,4299846
+PME-41785,Bayberry Farms Village #1511848,P2 - High,Closed,1511828,1511848
+PME-41744,Incorrect 140% amount on the Mississippi TIC,P2 - High,Closed,1531207,1531212
+PME-41770,Ineligible dependent picking up a dependent deduction,P2 - High,Closed,2150801,2150802
+PME-41781,Undo transfer to process move in in order to have the correct certifications on a HAP,P2 - High,QA,2252781,
+PME-41784,System will not save a ineligible indicator,P2 - High,QA,2328278,2434211
+PME-41682,Error message on Today's tab,P3 - Medium,Analysis,2911185,2911215
+PME-41740,Unable to undo move out,P2 - High,Analysis,3115217,3115240
+PME-41747,Unable to complete ICs,P2 - High,Analysis,3115217,3115240
+PME-41788,Backdate Affordable rent Schedule.,P2 - High,Analysis,4059382,3115240
